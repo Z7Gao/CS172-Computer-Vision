@@ -1,6 +1,6 @@
 # CS172-Computer-Vision
 
-This repository contains codes & report for 4 homeworks in CS172.
+This repository contains codes & report for four homeworks in CS172.
 
 ## HW1 Poisson Image Editing
 
