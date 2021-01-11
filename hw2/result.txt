@@ -1,0 +1,1045 @@
+Print of my program is redirected to this document.
+
+
+BoW, Linear SVM, 15 training images, on whole Caltech 256:
+==============================Let's start!======================================
+loading dataset from ./train_15.txt ...
+loading dataset from ./test_15.txt ...
+loading labels ...
+extracting descriptors from training set...
+self.train_descriptors.shape = (3855, 1024, 128)
+extracting descriptors from testing set...
+self.test_descriptors.shape = (26752, 1024, 128)
+restacked self.train_features.shape = (3947520, 128)
+generating codebook with k = 2000...
+/home/shanghaitech/anaconda3/lib/python3.6/site-packages/sklearn/cluster/k_means_.py:1418: RuntimeWarning: init_size=300 should be larger than k=2000. Setting it to 3*k
+  init_size=init_size)
+extracting visual words from means...
+codebook size = (2000, 128)
+quantizing training images in training set...
+quantizing training images in testing set...
+histogram shape: (3855, 2000) (26752, 2000)
+normalizing the encoding image data...
+/home/shanghaitech/anaconda3/lib/python3.6/site-packages/sklearn/utils/validation.py:475: DataConversionWarning: Data with input dtype int64 was converted to float64 by StandardScaler.
+  warnings.warn(msg, DataConversionWarning)
+adjusting hyper-parameters...
+YES! Best parameters set found:
+LinearSVC(C=0.001, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
+     verbose=0)
+traing the svm...
+testing on the testing set...
+generating testing result...
+                               precision    recall  f1-score   support
+
+                     001.ak47       0.02      0.01      0.01        83
+            002.american-flag       0.10      0.16      0.12        82
+                 003.backpack       0.05      0.02      0.02       263
+             004.baseball-bat       0.22      0.14      0.17       123
+           005.baseball-glove       0.01      0.01      0.01        73
+          006.basketball-hoop       0.07      0.11      0.09        96
+                      007.bat       0.08      0.06      0.07        82
+                  008.bathtub       0.05      0.01      0.01       255
+                     009.bear       0.03      0.03      0.03        72
+                 010.beer-mug       0.07      0.05      0.06        74
+                011.billiards       0.00      0.00      0.00        70
+               012.binoculars       0.09      0.07      0.08       141
+                 013.birdbath       0.15      0.17      0.16        70
+                    014.blimp       0.28      0.34      0.30       201
+               015.bonsai-101       0.06      0.09      0.07        69
+                 016.boom-box       0.12      0.14      0.13        69
+             017.bowling-ball       0.04      0.04      0.04       101
+              018.bowling-pin       0.06      0.09      0.07       105
+             019.boxing-glove       0.05      0.04      0.04        73
+                020.brain-101       0.04      0.03      0.03        92
+               021.breadmaker       0.05      0.06      0.06       106
+               022.buddha-101       0.07      0.10      0.08        93
+                023.bulldozer       0.02      0.01      0.02        72
+                024.butterfly       0.02      0.02      0.02       115
+                   025.cactus       0.05      0.06      0.06        83
+                     026.cake       0.03      0.04      0.03        67
+               027.calculator       0.02      0.01      0.01        88
+                    028.camel       0.30      0.60      0.40        96
+                   029.cannon       0.12      0.25      0.16        76
+                    030.canoe       0.02      0.01      0.01        86
+                 031.car-tire       0.01      0.00      0.01       227
+                  032.cartman       0.12      0.07      0.09       113
+                       033.cd       0.02      0.01      0.01        90
+                034.centipede       0.44      0.94      0.60       175
+               035.cereal-box       0.17      0.63      0.27        76
+           036.chandelier-101       0.00      0.00      0.00        71
+              037.chess-board       0.09      0.09      0.09        77
+                    038.chimp       0.05      0.03      0.04       175
+               039.chopsticks       0.24      0.38      0.29       121
+                040.cockroach       0.07      0.05      0.06       104
+               041.coffee-mug       0.00      0.00      0.00        78
+                   042.coffin       0.05      0.05      0.05        78
+                     043.coin       0.33      0.57      0.41       141
+                    044.comet       0.09      0.05      0.06       177
+        045.computer-keyboard       0.05      0.04      0.05        71
+         046.computer-monitor       0.40      0.66      0.50        74
+           047.computer-mouse       0.21      0.23      0.22       107
+                    048.conch       0.06      0.05      0.05       102
+                049.cormorant       0.11      0.16      0.13        92
+            050.covered-wagon       0.07      0.05      0.06       115
+               051.cowboy-hat       0.04      0.04      0.04        67
+                 052.crab-101       0.77      0.80      0.78       783
+               053.desk-globe       0.21      0.34      0.26        67
+             054.diamond-ring       0.07      0.03      0.04       187
+                     055.dice       0.06      0.03      0.04       159
+                      056.dog       0.08      0.10      0.09        88
+              057.dolphin-101       0.03      0.05      0.04        96
+                 058.doorknob       0.11      0.12      0.11        76
+           059.drinking-straw       0.04      0.03      0.03        94
+                     060.duck       0.02      0.01      0.01       105
+                061.dumb-bell       0.01      0.01      0.01        78
+             062.eiffel-tower       0.08      0.09      0.09        88
+      063.electric-guitar-101       0.04      0.05      0.04        77
+             064.elephant-101       0.17      0.31      0.22        81
+                      065.elk       0.17      0.10      0.13        90
+                 066.ewer-101       0.04      0.03      0.03       134
+               067.eyeglasses       0.05      0.02      0.03       194
+                     068.fern       0.02      0.03      0.02        68
+              069.fighter-jet       0.09      0.07      0.08        89
+        070.fire-extinguisher       0.16      0.16      0.16        88
+             071.fire-hydrant       0.02      0.01      0.01        76
+               072.fire-truck       0.06      0.08      0.07        75
+                073.fireworks       0.05      0.07      0.06        86
+               074.flashlight       0.02      0.01      0.02        73
+              075.floppy-disk       0.02      0.03      0.02        77
+          076.football-helmet       0.06      0.07      0.07        71
+              077.french-horn       0.00      0.00      0.00       125
+                078.fried-egg       0.04      0.05      0.04        77
+                  079.frisbee       0.08      0.14      0.10        87
+                     080.frog       0.08      0.08      0.08        86
+               081.frying-pan       0.05      0.12      0.07        69
+                   082.galaxy       0.29      0.27      0.28        84
+                 083.gas-pump       0.01      0.01      0.01        91
+                  084.giraffe       0.21      0.22      0.21        69
+                     085.goat       0.11      0.13      0.12        68
+       086.golden-gate-bridge       0.11      0.05      0.07        95
+                 087.goldfish       0.20      0.51      0.29        81
+                088.golf-ball       0.07      0.08      0.07        83
+                    089.goose       0.09      0.14      0.11        65
+                  090.gorilla       0.02      0.02      0.02        87
+          091.grand-piano-101       0.05      0.03      0.03       109
+                   092.grapes       0.00      0.00      0.00        85
+              093.grasshopper       0.28      0.70      0.40       105
+              094.guitar-pick       0.10      0.06      0.07        85
+                095.hamburger       0.22      0.39      0.28        69
+                  096.hammock       0.01      0.01      0.01        88
+                097.harmonica       0.11      0.21      0.15        66
+                     098.harp       0.01      0.01      0.01        80
+              099.harpsichord       0.06      0.08      0.07        73
+            100.hawksbill-101       0.03      0.02      0.02       104
+              101.head-phones       0.01      0.01      0.01        97
+           102.helicopter-101       0.27      0.34      0.30        68
+                 103.hibiscus       0.06      0.06      0.06        96
+            104.homer-simpson       0.06      0.06      0.06        97
+                    105.horse       0.23      0.10      0.14       159
+           106.horseshoe-crab       0.05      0.03      0.04        97
+          107.hot-air-balloon       0.00      0.00      0.00        72
+                  108.hot-dog       0.12      0.07      0.09        89
+                  109.hot-tub       0.05      0.06      0.05        85
+                110.hourglass       0.00      0.00      0.00        93
+                111.house-fly       0.03      0.02      0.03        90
+           112.human-skeleton       0.13      0.25      0.17        85
+              113.hummingbird       0.29      0.26      0.27       136
+                 114.ibis-101       0.14      0.09      0.11       127
+           115.ice-cream-cone       0.04      0.09      0.06        66
+                   116.iguana       0.17      0.20      0.18        82
+                     117.ipod       0.12      0.14      0.13        76
+                     118.iris       0.23      0.35      0.28        65
+             119.jesus-christ       0.02      0.01      0.02        72
+                120.joy-stick       0.04      0.02      0.03        83
+             121.kangaroo-101       0.08      0.07      0.07       100
+                    122.kayak       0.21      0.22      0.22        94
+                123.ketch-101       0.05      0.06      0.06        87
+             124.killer-whale       0.00      0.00      0.00        96
+                    125.knife       0.09      0.10      0.09        82
+                   126.ladder       0.04      0.03      0.03        80
+               127.laptop-101       0.12      0.07      0.09       121
+                    128.lathe       0.09      0.06      0.07        86
+             129.leopards-101       0.27      0.30      0.28       124
+            130.license-plate       0.09      0.16      0.11        69
+                131.lightbulb       0.08      0.08      0.08        83
+              132.light-house       0.13      0.19      0.15        90
+                133.lightning       0.16      0.14      0.15        66
+                134.llama-101       0.06      0.04      0.05        69
+                  135.mailbox       0.05      0.06      0.06        79
+                 136.mandolin       0.07      0.04      0.05        95
+                     137.mars       0.13      0.10      0.12        88
+                 138.mattress       0.03      0.05      0.04        76
+                139.megaphone       0.25      0.18      0.21        65
+              140.menorah-101       0.32      0.44      0.37        95
+               141.microscope       0.29      0.52      0.37        75
+                142.microwave       0.00      0.00      0.00        84
+                  143.minaret       0.25      0.20      0.22       132
+                 144.minotaur       0.04      0.03      0.03        80
+           145.motorbikes-101       0.06      0.05      0.05        80
+            146.mountain-bike       0.39      0.71      0.50        79
+                 147.mushroom       0.04      0.02      0.03        97
+                  148.mussels       0.18      0.27      0.21        97
+                  149.necktie       0.52      0.27      0.35       343
+                  150.octopus       0.06      0.05      0.05        85
+                  151.ostrich       0.14      0.23      0.18       107
+                      152.owl       0.14      0.13      0.14        99
+               153.palm-pilot       0.03      0.02      0.03        82
+                154.palm-tree       0.10      0.15      0.12        75
+                155.paperclip       0.13      0.20      0.16        82
+           156.paper-shredder       0.06      0.09      0.07        69
+                 157.pci-card       0.34      0.27      0.30       186
+                  158.penguin       0.04      0.04      0.04        99
+                   159.people       0.06      0.12      0.08        80
+            160.pez-dispenser       0.01      0.01      0.01        78
+              161.photocopier       0.07      0.07      0.07        75
+             162.picnic-table       0.10      0.07      0.08        76
+             163.playing-card       0.01      0.01      0.01        76
+                164.porcupine       0.09      0.08      0.09        86
+                     165.pram       0.05      0.04      0.04        77
+           166.praying-mantis       0.21      0.39      0.27        69
+                  167.pyramid       0.00      0.00      0.00        85
+                  168.raccoon       0.22      0.38      0.28        81
+          169.radio-telescope       0.02      0.01      0.01        91
+                  170.rainbow       0.76      0.71      0.73       785
+             171.refrigerator       0.32      0.90      0.47       101
+             172.revolver-101       0.78      0.92      0.84       420
+                    173.rifle       0.02      0.01      0.01        80
+             174.rotary-phone       0.09      0.11      0.10        88
+           175.roulette-wheel       0.06      0.08      0.07        93
+                   176.saddle       0.11      0.02      0.03       812
+                   177.saturn       0.02      0.02      0.02        85
+               178.school-bus       0.03      0.02      0.02        95
+             179.scorpion-101       0.00      0.00      0.00        88
+              180.screwdriver       0.00      0.00      0.00        89
+                   181.segway       0.09      0.09      0.09       112
+182.self-propelled-lawn-mower       0.05      0.04      0.04        75
+                  183.sextant       0.18      0.22      0.20        86
+              184.sheet-music       0.12      0.08      0.10        87
+               185.skateboard       0.08      0.06      0.07        85
+                    186.skunk       0.08      0.12      0.10        72
+               187.skyscraper       0.15      0.22      0.18        91
+               188.smokestack       0.55      0.44      0.49       105
+                    189.snail       0.06      0.07      0.07        95
+                    190.snake       0.02      0.03      0.03        70
+                  191.sneaker       0.01      0.01      0.01       109
+               192.snowmobile       0.32      0.34      0.33       133
+              193.soccer-ball       0.14      0.14      0.14        72
+                    194.socks       0.01      0.01      0.01        72
+                 195.soda-can       0.28      0.16      0.20       109
+                196.spaghetti       0.22      0.31      0.26       106
+               197.speed-boat       0.02      0.01      0.02        70
+                   198.spider       0.17      0.17      0.17       118
+                    199.spoon       0.13      0.11      0.12        79
+            200.stained-glass       0.00      0.00      0.00        88
+             201.starfish-101       0.06      0.05      0.06        91
+           202.steering-wheel       0.01      0.01      0.01        82
+                 203.stirrups       0.05      0.07      0.06        75
+            204.sunflower-101       0.08      0.06      0.07        99
+                 205.superman       0.03      0.04      0.04        70
+                    206.sushi       0.35      0.37      0.36        67
+                     207.swan       0.20      0.19      0.20       103
+         208.swiss-army-knife       0.00      0.00      0.00        83
+                    209.sword       0.02      0.01      0.01        87
+                  210.syringe       0.01      0.01      0.01        91
+               211.tambourine       0.05      0.04      0.04        78
+                   212.teapot       0.00      0.00      0.00        68
+               213.teddy-bear       0.01      0.01      0.01        72
+                   214.teepee       0.00      0.00      0.00        91
+            215.telephone-box       0.02      0.01      0.02        87
+              216.tennis-ball       0.11      0.16      0.13        68
+             217.tennis-court       0.06      0.04      0.04       107
+            218.tennis-racket       0.16      0.14      0.15       116
+               219.theodolite       0.03      0.03      0.03        86
+                  220.toaster       0.07      0.09      0.08        68
+                   221.tomato       0.20      0.38      0.26        68
+                222.tombstone       0.07      0.15      0.10        95
+                  223.top-hat       0.04      0.04      0.04        84
+             224.touring-bike       0.05      0.06      0.05        69
+               225.tower-pisa       0.06      0.02      0.03       217
+            226.traffic-light       0.05      0.04      0.04        84
+                227.treadmill       0.28      0.37      0.32       103
+              228.triceratops       0.19      0.51      0.27        85
+                 229.tricycle       0.02      0.01      0.01       100
+            230.trilobite-101       0.02      0.03      0.02        68
+                   231.tripod       0.19      0.20      0.19        69
+                  232.t-shirt       0.20      0.17      0.18        77
+              233.tuning-fork       0.07      0.08      0.08        75
+                  234.tweezer       0.15      0.08      0.11        84
+             235.umbrella-101       0.01      0.01      0.01       101
+                  236.unicorn       0.05      0.05      0.05        87
+                      237.vcr       0.10      0.07      0.09        80
+          238.video-projector       0.14      0.45      0.22        66
+          239.washing-machine       0.12      0.17      0.14        80
+                240.watch-101       0.02      0.01      0.02        69
+                241.waterfall       0.01      0.01      0.01        97
+               242.watermelon       0.19      0.37      0.25        65
+             243.welding-mask       0.01      0.01      0.01        78
+              244.wheelbarrow       0.04      0.02      0.03        83
+                 245.windmill       0.00      0.00      0.00        95
+              246.wine-bottle       0.07      0.04      0.05       197
+                247.xylophone       0.03      0.01      0.02        79
+                 248.yarmulke       0.27      0.53      0.36        80
+                    249.yo-yo       0.05      0.03      0.03       186
+                    250.zebra       0.01      0.01      0.01        97
+            251.airplanes-101       0.24      0.43      0.31        89
+             252.car-side-101       0.09      0.14      0.11        71
+           253.faces-easy-101       0.13      0.03      0.05       270
+                254.greyhound       0.07      0.12      0.09        74
+             255.tennis-shoes       0.08      0.07      0.07        85
+                     256.toad       0.03      0.03      0.03        65
+                  257.clutter       0.11      0.21      0.14        78
+
+                  avg / total       0.16      0.17      0.16     26752
+===========================================================================================                  
+
+
+BoW, Linear SVM, 30 training images, on whole Caltech 256:
+==============================Let's start 30!==============================================
+loading dataset from ./train_30.txt ...
+loading dataset from ./test_30.txt ...
+loading labels ...
+extracting descriptors from training set...
+self.train_descriptors.shape = (7710, 1024, 128)
+extracting descriptors from testing set...
+self.test_descriptors.shape = (22897, 1024, 128)
+restacked self.train_features.shape = (7895040, 128)
+generating codebook with k = 2000...
+extracting visual words from means...
+codebook size = (2000, 128)
+quantizing training images in training set...
+quantizing training images in testing set...
+histogram shape: (7710, 2000) (22897, 2000)
+normalizing the encoding image data...
+adjusting hyper-parameters...
+YES! Best parameters set found:
+LinearSVC(C=0.001, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
+     verbose=0)
+traing the svm...
+testing on the testing set...
+generating testing result...
+                               precision    recall  f1-score   support
+
+                     001.ak47       0.14      0.19      0.16        68
+            002.american-flag       0.14      0.22      0.17        67
+                 003.backpack       0.13      0.04      0.06       248
+             004.baseball-bat       0.24      0.16      0.19       108
+           005.baseball-glove       0.06      0.07      0.06        58
+          006.basketball-hoop       0.19      0.33      0.24        81
+                      007.bat       0.12      0.07      0.09        67
+                  008.bathtub       0.21      0.03      0.06       240
+                     009.bear       0.07      0.05      0.06        57
+                 010.beer-mug       0.04      0.03      0.04        59
+                011.billiards       0.03      0.02      0.02        55
+               012.binoculars       0.15      0.09      0.11       126
+                 013.birdbath       0.12      0.16      0.14        55
+                    014.blimp       0.47      0.40      0.43       186
+               015.bonsai-101       0.07      0.09      0.08        54
+                 016.boom-box       0.14      0.31      0.20        54
+             017.bowling-ball       0.06      0.03      0.04        86
+              018.bowling-pin       0.08      0.04      0.06        90
+             019.boxing-glove       0.05      0.03      0.04        58
+                020.brain-101       0.01      0.01      0.01        77
+               021.breadmaker       0.06      0.04      0.05        91
+               022.buddha-101       0.05      0.10      0.07        78
+                023.bulldozer       0.00      0.00      0.00        57
+                024.butterfly       0.00      0.00      0.00       100
+                   025.cactus       0.05      0.04      0.05        68
+                     026.cake       0.10      0.17      0.13        52
+               027.calculator       0.02      0.01      0.02        73
+                    028.camel       0.25      0.56      0.34        81
+                   029.cannon       0.08      0.21      0.12        61
+                    030.canoe       0.00      0.00      0.00        71
+                 031.car-tire       0.05      0.01      0.02       212
+                  032.cartman       0.17      0.13      0.15        98
+                       033.cd       0.06      0.04      0.05        75
+                034.centipede       0.37      0.93      0.52       160
+               035.cereal-box       0.19      0.62      0.30        61
+           036.chandelier-101       0.00      0.00      0.00        56
+              037.chess-board       0.10      0.11      0.10        62
+                    038.chimp       0.13      0.09      0.11       160
+               039.chopsticks       0.27      0.42      0.33       106
+                040.cockroach       0.12      0.06      0.08        89
+               041.coffee-mug       0.03      0.02      0.02        63
+                   042.coffin       0.12      0.08      0.10        63
+                     043.coin       0.38      0.57      0.45       126
+                    044.comet       0.11      0.05      0.07       162
+        045.computer-keyboard       0.05      0.04      0.04        56
+         046.computer-monitor       0.26      0.75      0.38        59
+           047.computer-mouse       0.24      0.35      0.28        92
+                    048.conch       0.06      0.02      0.03        87
+                049.cormorant       0.11      0.21      0.15        77
+            050.covered-wagon       0.05      0.05      0.05       100
+               051.cowboy-hat       0.03      0.02      0.02        52
+                 052.crab-101       0.78      0.82      0.80       768
+               053.desk-globe       0.17      0.42      0.25        52
+             054.diamond-ring       0.08      0.02      0.04       172
+                     055.dice       0.21      0.06      0.09       144
+                      056.dog       0.14      0.15      0.14        73
+              057.dolphin-101       0.06      0.06      0.06        81
+                 058.doorknob       0.16      0.18      0.17        61
+           059.drinking-straw       0.06      0.05      0.05        79
+                     060.duck       0.05      0.03      0.04        90
+                061.dumb-bell       0.02      0.02      0.02        63
+             062.eiffel-tower       0.09      0.11      0.10        73
+      063.electric-guitar-101       0.04      0.05      0.04        62
+             064.elephant-101       0.15      0.36      0.21        66
+                      065.elk       0.19      0.17      0.18        75
+                 066.ewer-101       0.04      0.01      0.01       119
+               067.eyeglasses       0.06      0.02      0.03       179
+                     068.fern       0.06      0.08      0.07        53
+              069.fighter-jet       0.13      0.22      0.16        74
+        070.fire-extinguisher       0.19      0.34      0.25        73
+             071.fire-hydrant       0.08      0.10      0.09        61
+               072.fire-truck       0.04      0.03      0.03        60
+                073.fireworks       0.03      0.04      0.04        71
+               074.flashlight       0.06      0.03      0.04        58
+              075.floppy-disk       0.03      0.02      0.02        62
+          076.football-helmet       0.13      0.20      0.16        56
+              077.french-horn       0.04      0.03      0.03       110
+                078.fried-egg       0.05      0.06      0.06        62
+                  079.frisbee       0.18      0.39      0.24        72
+                     080.frog       0.14      0.08      0.11        71
+               081.frying-pan       0.08      0.20      0.11        54
+                   082.galaxy       0.31      0.32      0.31        69
+                 083.gas-pump       0.04      0.01      0.02        76
+                  084.giraffe       0.17      0.11      0.13        54
+                     085.goat       0.12      0.09      0.11        53
+       086.golden-gate-bridge       0.00      0.00      0.00        80
+                 087.goldfish       0.20      0.70      0.31        66
+                088.golf-ball       0.14      0.18      0.16        68
+                    089.goose       0.08      0.06      0.07        50
+                  090.gorilla       0.03      0.03      0.03        72
+          091.grand-piano-101       0.17      0.06      0.09        94
+                   092.grapes       0.08      0.07      0.08        70
+              093.grasshopper       0.34      0.68      0.45        90
+              094.guitar-pick       0.04      0.03      0.03        70
+                095.hamburger       0.15      0.31      0.21        54
+                  096.hammock       0.00      0.00      0.00        73
+                097.harmonica       0.08      0.12      0.10        51
+                     098.harp       0.08      0.06      0.07        65
+              099.harpsichord       0.07      0.09      0.08        58
+            100.hawksbill-101       0.07      0.03      0.04        89
+              101.head-phones       0.06      0.04      0.04        82
+           102.helicopter-101       0.24      0.32      0.27        53
+                 103.hibiscus       0.17      0.19      0.18        81
+            104.homer-simpson       0.13      0.10      0.11        82
+                    105.horse       0.23      0.06      0.10       144
+           106.horseshoe-crab       0.10      0.09      0.09        82
+          107.hot-air-balloon       0.00      0.00      0.00        57
+                  108.hot-dog       0.16      0.12      0.14        74
+                  109.hot-tub       0.07      0.11      0.08        70
+                110.hourglass       0.00      0.00      0.00        78
+                111.house-fly       0.00      0.00      0.00        75
+           112.human-skeleton       0.14      0.23      0.17        70
+              113.hummingbird       0.42      0.31      0.36       121
+                 114.ibis-101       0.23      0.24      0.23       112
+           115.ice-cream-cone       0.11      0.08      0.09        51
+                   116.iguana       0.18      0.24      0.21        67
+                     117.ipod       0.18      0.16      0.17        61
+                     118.iris       0.18      0.48      0.26        50
+             119.jesus-christ       0.05      0.04      0.04        57
+                120.joy-stick       0.05      0.04      0.05        68
+             121.kangaroo-101       0.14      0.13      0.13        85
+                    122.kayak       0.16      0.28      0.21        79
+                123.ketch-101       0.07      0.08      0.08        72
+             124.killer-whale       0.00      0.00      0.00        81
+                    125.knife       0.13      0.16      0.15        67
+                   126.ladder       0.12      0.12      0.12        65
+               127.laptop-101       0.15      0.08      0.11       106
+                    128.lathe       0.10      0.10      0.10        71
+             129.leopards-101       0.29      0.31      0.30       109
+            130.license-plate       0.07      0.22      0.11        54
+                131.lightbulb       0.04      0.04      0.04        68
+              132.light-house       0.14      0.28      0.19        75
+                133.lightning       0.22      0.31      0.26        51
+                134.llama-101       0.11      0.19      0.14        54
+                  135.mailbox       0.10      0.09      0.10        64
+                 136.mandolin       0.02      0.01      0.01        80
+                     137.mars       0.11      0.11      0.11        73
+                 138.mattress       0.20      0.16      0.18        61
+                139.megaphone       0.20      0.32      0.24        50
+              140.menorah-101       0.26      0.46      0.33        80
+               141.microscope       0.23      0.67      0.35        60
+                142.microwave       0.02      0.01      0.02        69
+                  143.minaret       0.26      0.23      0.25       117
+                 144.minotaur       0.19      0.08      0.11        65
+           145.motorbikes-101       0.15      0.11      0.12        65
+            146.mountain-bike       0.27      0.73      0.40        64
+                 147.mushroom       0.01      0.01      0.01        82
+                  148.mussels       0.29      0.30      0.30        82
+                  149.necktie       0.58      0.32      0.42       328
+                  150.octopus       0.02      0.01      0.02        70
+                  151.ostrich       0.13      0.18      0.15        92
+                      152.owl       0.31      0.23      0.26        84
+               153.palm-pilot       0.03      0.01      0.02        67
+                154.palm-tree       0.10      0.23      0.14        60
+                155.paperclip       0.19      0.31      0.24        67
+           156.paper-shredder       0.15      0.28      0.19        54
+                 157.pci-card       0.52      0.33      0.41       171
+                  158.penguin       0.06      0.06      0.06        84
+                   159.people       0.13      0.25      0.17        65
+            160.pez-dispenser       0.00      0.00      0.00        63
+              161.photocopier       0.11      0.08      0.09        60
+             162.picnic-table       0.10      0.05      0.07        61
+             163.playing-card       0.04      0.05      0.04        61
+                164.porcupine       0.15      0.13      0.14        71
+                     165.pram       0.09      0.11      0.10        62
+           166.praying-mantis       0.31      0.43      0.36        54
+                  167.pyramid       0.04      0.01      0.02        70
+                  168.raccoon       0.21      0.48      0.29        66
+          169.radio-telescope       0.07      0.05      0.06        76
+                  170.rainbow       0.72      0.74      0.73       770
+             171.refrigerator       0.26      0.91      0.41        86
+             172.revolver-101       0.71      0.98      0.82       405
+                    173.rifle       0.06      0.02      0.02        65
+             174.rotary-phone       0.30      0.19      0.23        73
+           175.roulette-wheel       0.05      0.10      0.06        78
+                   176.saddle       0.40      0.04      0.07       797
+                   177.saturn       0.06      0.06      0.06        70
+               178.school-bus       0.06      0.04      0.05        80
+             179.scorpion-101       0.00      0.00      0.00        73
+              180.screwdriver       0.09      0.04      0.06        74
+                   181.segway       0.15      0.12      0.14        97
+182.self-propelled-lawn-mower       0.18      0.15      0.17        60
+                  183.sextant       0.31      0.37      0.34        71
+              184.sheet-music       0.15      0.08      0.11        72
+               185.skateboard       0.08      0.13      0.10        70
+                    186.skunk       0.10      0.21      0.14        57
+               187.skyscraper       0.19      0.30      0.23        76
+               188.smokestack       0.58      0.47      0.52        90
+                    189.snail       0.14      0.06      0.09        80
+                    190.snake       0.09      0.11      0.10        55
+                  191.sneaker       0.07      0.05      0.06        94
+               192.snowmobile       0.41      0.31      0.36       118
+              193.soccer-ball       0.19      0.21      0.20        57
+                    194.socks       0.09      0.05      0.07        57
+                 195.soda-can       0.24      0.16      0.19        94
+                196.spaghetti       0.14      0.33      0.20        91
+               197.speed-boat       0.06      0.04      0.04        55
+                   198.spider       0.18      0.17      0.18       103
+                    199.spoon       0.06      0.05      0.05        64
+            200.stained-glass       0.03      0.01      0.02        73
+             201.starfish-101       0.11      0.12      0.11        76
+           202.steering-wheel       0.10      0.09      0.09        67
+                 203.stirrups       0.03      0.02      0.02        60
+            204.sunflower-101       0.07      0.04      0.05        84
+                 205.superman       0.02      0.02      0.02        55
+                    206.sushi       0.34      0.56      0.42        52
+                     207.swan       0.19      0.20      0.20        88
+         208.swiss-army-knife       0.04      0.04      0.04        68
+                    209.sword       0.02      0.01      0.02        72
+                  210.syringe       0.09      0.08      0.08        76
+               211.tambourine       0.05      0.06      0.05        63
+                   212.teapot       0.00      0.00      0.00        53
+               213.teddy-bear       0.00      0.00      0.00        57
+                   214.teepee       0.03      0.03      0.03        76
+            215.telephone-box       0.00      0.00      0.00        72
+              216.tennis-ball       0.12      0.21      0.15        53
+             217.tennis-court       0.10      0.03      0.05        92
+            218.tennis-racket       0.10      0.13      0.11       101
+               219.theodolite       0.08      0.10      0.09        71
+                  220.toaster       0.12      0.21      0.15        53
+                   221.tomato       0.18      0.38      0.24        53
+                222.tombstone       0.08      0.12      0.10        80
+                  223.top-hat       0.02      0.01      0.02        69
+             224.touring-bike       0.04      0.04      0.04        54
+               225.tower-pisa       0.05      0.01      0.02       202
+            226.traffic-light       0.03      0.03      0.03        69
+                227.treadmill       0.25      0.38      0.30        88
+              228.triceratops       0.20      0.51      0.29        70
+                 229.tricycle       0.09      0.09      0.09        85
+            230.trilobite-101       0.04      0.08      0.05        53
+                   231.tripod       0.29      0.28      0.28        54
+                  232.t-shirt       0.19      0.19      0.19        62
+              233.tuning-fork       0.07      0.05      0.06        60
+                  234.tweezer       0.09      0.04      0.06        69
+             235.umbrella-101       0.06      0.02      0.03        86
+                  236.unicorn       0.03      0.03      0.03        72
+                      237.vcr       0.12      0.18      0.15        65
+          238.video-projector       0.12      0.65      0.20        51
+          239.washing-machine       0.06      0.06      0.06        65
+                240.watch-101       0.04      0.04      0.04        54
+                241.waterfall       0.05      0.04      0.04        82
+               242.watermelon       0.16      0.42      0.23        50
+             243.welding-mask       0.00      0.00      0.00        63
+              244.wheelbarrow       0.06      0.03      0.04        68
+                 245.windmill       0.04      0.03      0.03        80
+              246.wine-bottle       0.17      0.07      0.10       182
+                247.xylophone       0.04      0.03      0.03        64
+                 248.yarmulke       0.25      0.66      0.37        65
+                    249.yo-yo       0.17      0.07      0.10       171
+                    250.zebra       0.02      0.01      0.01        82
+            251.airplanes-101       0.30      0.57      0.39        74
+             252.car-side-101       0.02      0.02      0.02        56
+           253.faces-easy-101       0.10      0.02      0.03       255
+                254.greyhound       0.06      0.08      0.07        59
+             255.tennis-shoes       0.05      0.06      0.05        70
+                     256.toad       0.07      0.08      0.07        50
+                  257.clutter       0.09      0.25      0.13        63
+
+                  avg / total       0.20      0.21      0.18     22897
+==========================================================================================
+
+
+1-level SPM , Linear SVM, 15 training images, on whole Caltech 256:
+==============================Let's start 15!=============================================
+loading dataset from ./train_15.txt ...
+loading dataset from ./test_15.txt ...
+loading labels ...
+extracting descriptors from training set...
+self.train_descriptors.shape = (3855, 1024, 128)
+extracting descriptors from testing set...
+self.test_descriptors.shape = (26752, 1024, 128)
+restacked self.train_features.shape = (3947520, 128)
+generating codebook with k = 2000...
+extracting visual words from means...
+codebook size = (2000, 128)
+********************************level = 1******************************************
+training set sift extraction...
+testing set sift extraction...
+(3855, 10000)
+(26752, 10000)
+adjusting hyper-parameters...
+YES! Best parameters set found:
+LinearSVC(C=0.001, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
+     verbose=0)
+traing the svm...
+testing on the testing set...
+generating testing result...
+                               precision    recall  f1-score   support
+
+                     001.ak47       0.26      0.23      0.25        83
+            002.american-flag       0.17      0.13      0.15        82
+                 003.backpack       0.35      0.06      0.11       263
+             004.baseball-bat       0.12      0.09      0.10       123
+           005.baseball-glove       0.05      0.08      0.06        73
+          006.basketball-hoop       0.34      0.33      0.34        96
+                      007.bat       0.11      0.05      0.07        82
+                  008.bathtub       0.16      0.03      0.05       255
+                     009.bear       0.02      0.03      0.02        72
+                 010.beer-mug       0.06      0.05      0.06        74
+                011.billiards       0.05      0.03      0.04        70
+               012.binoculars       0.18      0.11      0.13       141
+                 013.birdbath       0.19      0.21      0.20        70
+                    014.blimp       0.39      0.31      0.35       201
+               015.bonsai-101       0.20      0.13      0.16        69
+                 016.boom-box       0.16      0.26      0.19        69
+             017.bowling-ball       0.13      0.06      0.08       101
+              018.bowling-pin       0.08      0.10      0.09       105
+             019.boxing-glove       0.02      0.03      0.02        73
+                020.brain-101       0.00      0.00      0.00        92
+               021.breadmaker       0.03      0.02      0.02       106
+               022.buddha-101       0.08      0.09      0.08        93
+                023.bulldozer       0.04      0.03      0.03        72
+                024.butterfly       0.16      0.09      0.11       115
+                   025.cactus       0.08      0.16      0.10        83
+                     026.cake       0.03      0.07      0.04        67
+               027.calculator       0.04      0.05      0.04        88
+                    028.camel       0.37      0.40      0.38        96
+                   029.cannon       0.03      0.04      0.03        76
+                    030.canoe       0.03      0.03      0.03        86
+                 031.car-tire       0.06      0.02      0.03       227
+                  032.cartman       0.17      0.18      0.17       113
+                       033.cd       0.05      0.03      0.04        90
+                034.centipede       0.48      0.93      0.63       175
+               035.cereal-box       0.29      0.63      0.40        76
+           036.chandelier-101       0.02      0.03      0.03        71
+              037.chess-board       0.08      0.16      0.10        77
+                    038.chimp       0.11      0.08      0.09       175
+               039.chopsticks       0.23      0.33      0.27       121
+                040.cockroach       0.12      0.07      0.09       104
+               041.coffee-mug       0.00      0.00      0.00        78
+                   042.coffin       0.09      0.06      0.07        78
+                     043.coin       0.42      0.62      0.50       141
+                    044.comet       0.14      0.05      0.07       177
+        045.computer-keyboard       0.08      0.08      0.08        71
+         046.computer-monitor       0.31      0.58      0.41        74
+           047.computer-mouse       0.38      0.42      0.40       107
+                    048.conch       0.10      0.04      0.06       102
+                049.cormorant       0.08      0.15      0.11        92
+            050.covered-wagon       0.06      0.04      0.05       115
+               051.cowboy-hat       0.02      0.01      0.02        67
+                 052.crab-101       0.94      0.81      0.87       783
+               053.desk-globe       0.41      0.49      0.45        67
+             054.diamond-ring       0.05      0.02      0.03       187
+                     055.dice       0.03      0.01      0.02       159
+                      056.dog       0.10      0.11      0.11        88
+              057.dolphin-101       0.01      0.01      0.01        96
+                 058.doorknob       0.15      0.24      0.18        76
+           059.drinking-straw       0.03      0.02      0.02        94
+                     060.duck       0.04      0.03      0.03       105
+                061.dumb-bell       0.04      0.04      0.04        78
+             062.eiffel-tower       0.07      0.07      0.07        88
+      063.electric-guitar-101       0.04      0.09      0.05        77
+             064.elephant-101       0.23      0.33      0.27        81
+                      065.elk       0.11      0.24      0.15        90
+                 066.ewer-101       0.04      0.02      0.03       134
+               067.eyeglasses       0.05      0.02      0.03       194
+                     068.fern       0.11      0.19      0.14        68
+              069.fighter-jet       0.20      0.31      0.25        89
+        070.fire-extinguisher       0.41      0.27      0.33        88
+             071.fire-hydrant       0.05      0.07      0.05        76
+               072.fire-truck       0.02      0.01      0.02        75
+                073.fireworks       0.05      0.06      0.05        86
+               074.flashlight       0.03      0.01      0.02        73
+              075.floppy-disk       0.05      0.03      0.03        77
+          076.football-helmet       0.10      0.14      0.12        71
+              077.french-horn       0.07      0.04      0.05       125
+                078.fried-egg       0.01      0.01      0.01        77
+                  079.frisbee       0.14      0.24      0.18        87
+                     080.frog       0.04      0.03      0.04        86
+               081.frying-pan       0.11      0.17      0.14        69
+                   082.galaxy       0.40      0.40      0.40        84
+                 083.gas-pump       0.04      0.02      0.03        91
+                  084.giraffe       0.22      0.17      0.20        69
+                     085.goat       0.21      0.26      0.23        68
+       086.golden-gate-bridge       0.22      0.13      0.16        95
+                 087.goldfish       0.26      0.75      0.38        81
+                088.golf-ball       0.12      0.14      0.13        83
+                    089.goose       0.04      0.06      0.05        65
+                  090.gorilla       0.01      0.01      0.01        87
+          091.grand-piano-101       0.06      0.03      0.04       109
+                   092.grapes       0.08      0.05      0.06        85
+              093.grasshopper       0.36      0.83      0.50       105
+              094.guitar-pick       0.08      0.04      0.05        85
+                095.hamburger       0.23      0.35      0.28        69
+                  096.hammock       0.03      0.05      0.03        88
+                097.harmonica       0.05      0.11      0.07        66
+                     098.harp       0.04      0.05      0.05        80
+              099.harpsichord       0.05      0.05      0.05        73
+            100.hawksbill-101       0.04      0.02      0.03       104
+              101.head-phones       0.04      0.04      0.04        97
+           102.helicopter-101       0.22      0.43      0.29        68
+                 103.hibiscus       0.11      0.11      0.11        96
+            104.homer-simpson       0.09      0.07      0.08        97
+                    105.horse       0.14      0.11      0.12       159
+           106.horseshoe-crab       0.05      0.03      0.04        97
+          107.hot-air-balloon       0.01      0.01      0.01        72
+                  108.hot-dog       0.20      0.13      0.16        89
+                  109.hot-tub       0.10      0.14      0.12        85
+                110.hourglass       0.05      0.03      0.04        93
+                111.house-fly       0.03      0.02      0.03        90
+           112.human-skeleton       0.09      0.13      0.11        85
+              113.hummingbird       0.33      0.45      0.38       136
+                 114.ibis-101       0.21      0.09      0.13       127
+           115.ice-cream-cone       0.07      0.15      0.10        66
+                   116.iguana       0.23      0.27      0.25        82
+                     117.ipod       0.12      0.13      0.13        76
+                     118.iris       0.34      0.52      0.41        65
+             119.jesus-christ       0.00      0.00      0.00        72
+                120.joy-stick       0.05      0.04      0.04        83
+             121.kangaroo-101       0.05      0.04      0.04       100
+                    122.kayak       0.27      0.22      0.25        94
+                123.ketch-101       0.08      0.15      0.10        87
+             124.killer-whale       0.03      0.03      0.03        96
+                    125.knife       0.21      0.29      0.24        82
+                   126.ladder       0.15      0.16      0.16        80
+               127.laptop-101       0.20      0.16      0.18       121
+                    128.lathe       0.28      0.23      0.25        86
+             129.leopards-101       0.34      0.21      0.26       124
+            130.license-plate       0.10      0.13      0.11        69
+                131.lightbulb       0.07      0.11      0.09        83
+              132.light-house       0.20      0.24      0.22        90
+                133.lightning       0.08      0.12      0.09        66
+                134.llama-101       0.16      0.20      0.18        69
+                  135.mailbox       0.17      0.14      0.15        79
+                 136.mandolin       0.09      0.11      0.10        95
+                     137.mars       0.09      0.09      0.09        88
+                 138.mattress       0.08      0.16      0.11        76
+                139.megaphone       0.33      0.29      0.31        65
+              140.menorah-101       0.56      0.41      0.47        95
+               141.microscope       0.33      0.47      0.38        75
+                142.microwave       0.01      0.01      0.01        84
+                  143.minaret       0.36      0.23      0.29       132
+                 144.minotaur       0.04      0.03      0.03        80
+           145.motorbikes-101       0.24      0.14      0.17        80
+            146.mountain-bike       0.49      0.71      0.58        79
+                 147.mushroom       0.05      0.03      0.04        97
+                  148.mussels       0.23      0.31      0.26        97
+                  149.necktie       0.68      0.41      0.51       343
+                  150.octopus       0.04      0.07      0.05        85
+                  151.ostrich       0.13      0.21      0.16       107
+                      152.owl       0.29      0.30      0.30        99
+               153.palm-pilot       0.04      0.02      0.03        82
+                154.palm-tree       0.07      0.24      0.11        75
+                155.paperclip       0.19      0.32      0.24        82
+           156.paper-shredder       0.19      0.20      0.20        69
+                 157.pci-card       0.54      0.52      0.53       186
+                  158.penguin       0.03      0.05      0.04        99
+                   159.people       0.11      0.19      0.14        80
+            160.pez-dispenser       0.05      0.05      0.05        78
+              161.photocopier       0.14      0.16      0.15        75
+             162.picnic-table       0.17      0.13      0.15        76
+             163.playing-card       0.05      0.05      0.05        76
+                164.porcupine       0.10      0.07      0.08        86
+                     165.pram       0.03      0.03      0.03        77
+           166.praying-mantis       0.25      0.42      0.31        69
+                  167.pyramid       0.02      0.04      0.03        85
+                  168.raccoon       0.19      0.30      0.23        81
+          169.radio-telescope       0.08      0.04      0.06        91
+                  170.rainbow       0.84      0.69      0.76       785
+             171.refrigerator       0.49      0.88      0.63       101
+             172.revolver-101       0.96      0.96      0.96       420
+                    173.rifle       0.00      0.00      0.00        80
+             174.rotary-phone       0.27      0.26      0.26        88
+           175.roulette-wheel       0.07      0.17      0.10        93
+                   176.saddle       0.19      0.02      0.04       812
+                   177.saturn       0.09      0.15      0.11        85
+               178.school-bus       0.08      0.07      0.07        95
+             179.scorpion-101       0.00      0.00      0.00        88
+              180.screwdriver       0.01      0.01      0.01        89
+                   181.segway       0.05      0.04      0.04       112
+182.self-propelled-lawn-mower       0.10      0.09      0.09        75
+                  183.sextant       0.43      0.29      0.35        86
+              184.sheet-music       0.09      0.05      0.06        87
+               185.skateboard       0.04      0.09      0.06        85
+                    186.skunk       0.15      0.19      0.17        72
+               187.skyscraper       0.19      0.26      0.22        91
+               188.smokestack       0.60      0.53      0.57       105
+                    189.snail       0.03      0.02      0.02        95
+                    190.snake       0.14      0.20      0.16        70
+                  191.sneaker       0.16      0.13      0.14       109
+               192.snowmobile       0.36      0.35      0.35       133
+              193.soccer-ball       0.18      0.17      0.17        72
+                    194.socks       0.03      0.03      0.03        72
+                 195.soda-can       0.24      0.24      0.24       109
+                196.spaghetti       0.10      0.26      0.15       106
+               197.speed-boat       0.07      0.09      0.08        70
+                   198.spider       0.20      0.19      0.20       118
+                    199.spoon       0.12      0.15      0.13        79
+            200.stained-glass       0.00      0.00      0.00        88
+             201.starfish-101       0.09      0.11      0.10        91
+           202.steering-wheel       0.08      0.07      0.08        82
+                 203.stirrups       0.01      0.01      0.01        75
+            204.sunflower-101       0.12      0.09      0.10        99
+                 205.superman       0.04      0.06      0.05        70
+                    206.sushi       0.44      0.66      0.53        67
+                     207.swan       0.25      0.30      0.28       103
+         208.swiss-army-knife       0.05      0.02      0.03        83
+                    209.sword       0.00      0.00      0.00        87
+                  210.syringe       0.07      0.07      0.07        91
+               211.tambourine       0.04      0.06      0.05        78
+                   212.teapot       0.01      0.01      0.01        68
+               213.teddy-bear       0.02      0.03      0.02        72
+                   214.teepee       0.02      0.02      0.02        91
+            215.telephone-box       0.02      0.01      0.02        87
+              216.tennis-ball       0.03      0.06      0.04        68
+             217.tennis-court       0.12      0.06      0.08       107
+            218.tennis-racket       0.18      0.17      0.18       116
+               219.theodolite       0.07      0.07      0.07        86
+                  220.toaster       0.20      0.24      0.22        68
+                   221.tomato       0.33      0.41      0.36        68
+                222.tombstone       0.06      0.13      0.08        95
+                  223.top-hat       0.02      0.01      0.02        84
+             224.touring-bike       0.06      0.09      0.07        69
+               225.tower-pisa       0.06      0.01      0.02       217
+            226.traffic-light       0.02      0.01      0.01        84
+                227.treadmill       0.30      0.29      0.30       103
+              228.triceratops       0.23      0.35      0.28        85
+                 229.tricycle       0.06      0.05      0.06       100
+            230.trilobite-101       0.06      0.07      0.07        68
+                   231.tripod       0.25      0.22      0.23        69
+                  232.t-shirt       0.17      0.32      0.23        77
+              233.tuning-fork       0.11      0.07      0.08        75
+                  234.tweezer       0.12      0.17      0.14        84
+             235.umbrella-101       0.04      0.04      0.04       101
+                  236.unicorn       0.02      0.01      0.02        87
+                      237.vcr       0.12      0.17      0.14        80
+          238.video-projector       0.15      0.64      0.25        66
+          239.washing-machine       0.05      0.04      0.04        80
+                240.watch-101       0.01      0.01      0.01        69
+                241.waterfall       0.04      0.03      0.03        97
+               242.watermelon       0.07      0.14      0.10        65
+             243.welding-mask       0.07      0.04      0.05        78
+              244.wheelbarrow       0.01      0.01      0.01        83
+                 245.windmill       0.00      0.00      0.00        95
+              246.wine-bottle       0.07      0.03      0.04       197
+                247.xylophone       0.12      0.11      0.12        79
+                 248.yarmulke       0.42      0.62      0.50        80
+                    249.yo-yo       0.23      0.15      0.18       186
+                    250.zebra       0.00      0.00      0.00        97
+            251.airplanes-101       0.41      0.54      0.47        89
+             252.car-side-101       0.18      0.14      0.16        71
+           253.faces-easy-101       0.10      0.04      0.05       270
+                254.greyhound       0.08      0.12      0.09        74
+             255.tennis-shoes       0.09      0.06      0.07        85
+                     256.toad       0.20      0.18      0.19        65
+                  257.clutter       0.10      0.23      0.14        78
+
+                  avg / total       0.21      0.20      0.19     26752
+
+==========================================================================================
+
+
+
+
+SPM level 2, Linear SVM, 15 training images, 32 classes of Caltech 256: 
+===========================================================================================  
+Codebook Size: 300
+Pyramid level: 2
+
+(960, 100800) (2877, 100800)
+Tuning hyper-parameters
+
+Best parameters set found:
+
+LinearSVC(C=0.01, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
+     verbose=0)
+
+Grid scores on development set:
+
+0.287 (+/-0.049) for {'C': 0.001}
+0.345 (+/-0.030) for {'C': 0.01}
+0.343 (+/-0.023) for {'C': 0.1}
+0.342 (+/-0.023) for {'C': 1.0}
+0.342 (+/-0.023) for {'C': 10.0}
+0.342 (+/-0.023) for {'C': 100.0}
+
+Detailed classification report:
+
+                     precision    recall  f1-score   support
+
+           001.ak47       0.27      0.26      0.27        68
+  002.american-flag       0.37      0.39      0.38        67
+       003.backpack       0.42      0.15      0.22       248
+   004.baseball-bat       0.65      0.49      0.56       186
+ 005.baseball-glove       0.26      0.43      0.32        68
+006.basketball-hoop       0.13      0.12      0.13        56
+            007.bat       0.49      0.63      0.55        92
+        008.bathtub       0.27      0.54      0.36        61
+           009.bear       0.42      0.43      0.42        74
+       010.beer-mug       0.40      0.28      0.33        71
+      011.billiards       0.33      0.16      0.22        94
+     012.binoculars       0.39      0.74      0.51        53
+       013.birdbath       0.44      0.61      0.51       121
+          014.blimp       0.56      0.60      0.58       112
+     015.bonsai-101       0.42      0.66      0.51        67
+       016.boom-box       0.24      0.33      0.28        80
+   017.bowling-ball       0.21      0.22      0.22        82
+    018.bowling-pin       0.25      0.43      0.31        84
+   019.boxing-glove       0.25      0.21      0.23        76
+      020.brain-101       0.36      0.33      0.34        70
+     021.breadmaker       0.28      0.24      0.26        80
+     022.buddha-101       0.04      0.01      0.02        73
+      023.bulldozer       0.17      0.19      0.18        74
+      024.butterfly       0.45      0.44      0.45        97
+         025.cactus       0.32      0.38      0.35        60
+           026.cake       0.46      0.37      0.41        71
+     027.calculator       0.41      0.47      0.43       118
+          028.camel       0.12      0.12      0.12        60
+         029.cannon       0.23      0.22      0.23        76
+          030.canoe       0.39      0.26      0.31       202
+       031.car-tire       0.25      0.22      0.24        72
+        032.cartman       0.30      0.47      0.37        64
+
+        avg / total       0.36      0.35      0.34      2877
+
+
+
+===========================================================================================  
+
+
+
+
+SPM level 2, Non-Linear SVM, 15 training images, 32 classes of Caltech 256:                                
+===========================================================================================
+Codebook Size: 300
+Pyramid level: 2
+
+(960, 100800) (2877, 100800)
+
+Best parameters set found:
+
+SVC(C=100.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=0.001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+
+Grid scores on development set:
+
+0.243 (+/-0.060) for {'C': 0.001, 'gamma': 0.001}
+0.246 (+/-0.043) for {'C': 0.001, 'gamma': 0.01}
+0.245 (+/-0.037) for {'C': 0.001, 'gamma': 0.1}
+0.212 (+/-0.045) for {'C': 0.001, 'gamma': 1.0}
+0.204 (+/-0.049) for {'C': 0.001, 'gamma': 10.0}
+0.031 (+/-0.000) for {'C': 0.001, 'gamma': 100.0}
+0.243 (+/-0.060) for {'C': 0.01, 'gamma': 0.001}
+0.246 (+/-0.043) for {'C': 0.01, 'gamma': 0.01}
+0.245 (+/-0.037) for {'C': 0.01, 'gamma': 0.1}
+0.205 (+/-0.041) for {'C': 0.01, 'gamma': 1.0}
+0.204 (+/-0.049) for {'C': 0.01, 'gamma': 10.0}
+0.031 (+/-0.000) for {'C': 0.01, 'gamma': 100.0}
+0.243 (+/-0.060) for {'C': 0.1, 'gamma': 0.001}
+0.246 (+/-0.043) for {'C': 0.1, 'gamma': 0.01}
+0.245 (+/-0.037) for {'C': 0.1, 'gamma': 0.1}
+0.205 (+/-0.041) for {'C': 0.1, 'gamma': 1.0}
+0.204 (+/-0.049) for {'C': 0.1, 'gamma': 10.0}
+0.031 (+/-0.000) for {'C': 0.1, 'gamma': 100.0}
+0.243 (+/-0.060) for {'C': 1.0, 'gamma': 0.001}
+0.248 (+/-0.042) for {'C': 1.0, 'gamma': 0.01}
+0.278 (+/-0.042) for {'C': 1.0, 'gamma': 0.1}
+0.107 (+/-0.021) for {'C': 1.0, 'gamma': 1.0}
+0.201 (+/-0.044) for {'C': 1.0, 'gamma': 10.0}
+0.031 (+/-0.000) for {'C': 1.0, 'gamma': 100.0}
+0.272 (+/-0.052) for {'C': 10.0, 'gamma': 0.001}
+0.305 (+/-0.048) for {'C': 10.0, 'gamma': 0.01}
+0.289 (+/-0.025) for {'C': 10.0, 'gamma': 0.1}
+0.134 (+/-0.036) for {'C': 10.0, 'gamma': 1.0}
+0.201 (+/-0.044) for {'C': 10.0, 'gamma': 10.0}
+0.031 (+/-0.000) for {'C': 10.0, 'gamma': 100.0}
+0.309 (+/-0.059) for {'C': 100.0, 'gamma': 0.001}
+0.305 (+/-0.048) for {'C': 100.0, 'gamma': 0.01}
+0.289 (+/-0.025) for {'C': 100.0, 'gamma': 0.1}
+0.134 (+/-0.036) for {'C': 100.0, 'gamma': 1.0}
+0.201 (+/-0.044) for {'C': 100.0, 'gamma': 10.0}
+0.031 (+/-0.000) for {'C': 100.0, 'gamma': 100.0}
+
+Detailed classification report:
+
+
+                     precision    recall  f1-score   support
+
+           001.ak47       0.34      0.29      0.32        68
+  002.american-flag       0.55      0.25      0.35        67
+       003.backpack       0.35      0.20      0.25       248
+   004.baseball-bat       0.66      0.44      0.53       186
+ 005.baseball-glove       0.26      0.40      0.32        68
+006.basketball-hoop       0.13      0.18      0.15        56
+            007.bat       0.63      0.43      0.52        92
+        008.bathtub       0.34      0.41      0.37        61
+           009.bear       0.46      0.43      0.45        74
+       010.beer-mug       0.23      0.21      0.22        71
+      011.billiards       0.15      0.29      0.19        94
+     012.binoculars       0.72      0.49      0.58        53
+       013.birdbath       0.56      0.55      0.56       121
+          014.blimp       0.71      0.47      0.57       112
+     015.bonsai-101       0.58      0.46      0.52        67
+       016.boom-box       0.39      0.34      0.36        80
+   017.bowling-ball       0.20      0.33      0.25        82
+    018.bowling-pin       0.36      0.38      0.37        84
+   019.boxing-glove       0.20      0.30      0.24        76
+      020.brain-101       0.38      0.34      0.36        70
+     021.breadmaker       0.27      0.26      0.27        80
+     022.buddha-101       0.08      0.16      0.11        73
+      023.bulldozer       0.29      0.22      0.25        74
+      024.butterfly       0.73      0.38      0.50        97
+         025.cactus       0.25      0.30      0.27        60
+           026.cake       0.21      0.32      0.26        71
+     027.calculator       0.42      0.36      0.39       118
+          028.camel       0.11      0.13      0.12        60
+         029.cannon       0.18      0.25      0.21        76
+          030.canoe       0.38      0.32      0.35       202
+       031.car-tire       0.18      0.19      0.19        72
+        032.cartman       0.29      0.44      0.35        64
+
+        avg / total       0.39      0.33      0.35      2877
+===========================================================================================
+
